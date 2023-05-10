@@ -1,25 +1,15 @@
 package org.example;
 
+import com.browser.BrowserParameter;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.ResourceBundle;
-
 public class UItest {
-    ChromeDriver driver = new ChromeDriver();
-
     @Test
-    public void UItest() throws InterruptedException{
-        WebDriverManager.chromedriver().setup();
-        driver.get("https://open.spotify.com/");
-        driver.manage().window().maximize();
-
+    public void UITest() throws InterruptedException{
+        WebDriver driver= BrowserParameter.setupBrowser("chrome","https://open.spotify.com/");
         SpotifyPageObject spo=new SpotifyPageObject(driver);
 
         spo.login();

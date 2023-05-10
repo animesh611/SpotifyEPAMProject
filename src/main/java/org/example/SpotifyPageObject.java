@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.ResourceBundle;
 
-public class SpotifyPageObject {
-
+public class SpotifyPageObject
+{
     WebDriver driver;
     public SpotifyPageObject(WebDriver driver){
         this.driver=driver;
